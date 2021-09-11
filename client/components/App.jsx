@@ -1,6 +1,6 @@
 import React from 'react';
-import ColumnOne from './columnOne';
-import ColumnTwo from './columnTwo';
+import ColumnOne from './columnOne/columnOne';
+import ColumnTwo from './columnTwo/columnTwo';
 
 class App extends React.Component {
   constructor() {

@@ -1,5 +1,9 @@
+/****  GLOBAL  ****/
 body {
   background-color: black;
+}
+button {
+  cursor: pointer;
 }
 .header {
   margin: 40px 0px 10px 40px;
@@ -10,12 +14,6 @@ body {
 .page {
   display: grid;
   grid-template-columns: 30% 68%;
-}
-.columnOne {
-  grid-column: 1 / 2;
-}
-.columnTwo {
-  grid-column: 2 / 2;
 }
 
 
@@ -28,7 +26,7 @@ body {
   border: 2px solid rgb(0, 255, 0);
   border-radius: 50px;
 }
-.head {
+.name {
   font-size: 40px;
   color: rgb(0, 255, 0);
   margin: 0px;
@@ -43,7 +41,7 @@ body {
 .black {
   color: black;
 }
-.headBox {
+.nameBox {
   display: grid;
   grid-template-columns: auto auto;
   width: fit-content;
@@ -75,7 +73,7 @@ body {
   margin-top: 5px;
   align-items: center;
 }
-.location, .telephone, .email, .linkedIn, .github, .skills {
+.location, .telephone, .email, .linkedIn, .github, .skillsList {
   font-size: 20px;
   color: rgb(0, 255, 0);
   margin: 0px;
@@ -83,8 +81,8 @@ body {
   padding: 0px;
 }
 
-/** SKILLS **/
-.skills {
+/** SKILLS LIST **/
+.skillsList {
   display: grid;
   grid-template-columns: 35% 35%;
 }
@@ -99,7 +97,7 @@ body {
   margin-top: 30px;
   padding: 0px;
 }
-.tab {
+.sectionTab {
   border: 2px solid black;
   border-left: 0;
   border-right: 1px solid black;
@@ -112,7 +110,7 @@ body {
   margin: 0px;
   cursor: pointer;
 }
-.activeTab {
+.activeSectionTab {
   border: 2px solid rgb(0, 255, 0);
   border-bottom: 0;
   border-radius: 10px 10px 0px 0px;
@@ -143,4 +141,97 @@ body {
 .certZoom {
   width: 90%;
   cursor: pointer;
+}
+
+/** TECHNICAL SKILLS **/
+.skillsSection {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+/* SKILL TABS LAYOUT / COLUMNONE */
+.skillTabs {
+  margin: 0px;
+  padding: 0px;
+}
+.skillTab {
+  border: none;
+  border-radius: 10px 0px 0px 10px;
+  color: white;
+  background-color: rgb(61, 61, 61);
+  width: 100%;
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+}
+.activeSkillTab {
+  border: none;
+  border-radius: 10px 0px 0px 10px;
+  width: 100%;
+  color: white;
+  background-color: rgb(37, 37, 37);
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+}
+/* COLUMNTWO */
+.skillColumnTwo {
+  padding: 0px 30px;
+  background-color: rgb(37, 37, 37);
+  border-radius: 0px 10px 10px 10px;
+  min-height: 1000px;
+}
+.skillTitle {
+  text-align: center;
+}
+/* SKILL WIDGETS */
+.widget {
+  margin-right: 10%;
+}
+.crudOperations {
+  height: 100px;
+  overflow-x: auto;
+}
+.counterWidgets {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
+.databaseWidgets {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+/* Modals */
+.modalBackground {
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: black;
+  z-index: 2;
+}
+.modalBox {
+  color: rgb(0, 255, 0);
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 15px;
+  margin: 250px 25%;
+  box-shadow: 0 4px 20px rgba(0, 255, 0, 1);
+  border-radius: 10px;
+  text-align: center;
+  width: 50%;
+}
+.modalScroll {
+  display: grid;
+  max-height: 200px;
+  overflow-x: auto;
+  margin: 15px 0px;
+}
+.updateButton {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+
+/****  MISC.  ****/
+.flashTab {
+  background-color: rgb(0, 255, 0);
+  color: black;
 }

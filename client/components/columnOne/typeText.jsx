@@ -26,21 +26,21 @@ const TypeText = ({ className, preIsComplete, text, completePre }) => {
     }, [string, text]);
     if (block) {
       return (
-        <div className="headBox">
-          <div className={className === 'head' ? 'block' : 'altBlock'}>&#9615;</div>
+        <div className="nameBox">
+          <div className={className === 'name' ? 'block' : 'altBlock'}>&#9615;</div>
           <div className={className}>{string}&#9615;</div>
         </div>
       )
     }
     return (
-      <div className="headBox">
-        <div className={className === 'head' ? 'block' : 'altBlock'}>&#9615;</div>
+      <div className="nameBox">
+        <div className={className === 'name' ? 'block' : 'altBlock'}>&#9615;</div>
         <div className={className}>{string}</div>
       </div>
     )
   }
   return (
-    <div className="headBox">
+    <div className="nameBox">
       <div className='altBlock'>&#9615;</div>
       <div className={'title black'}>placeholder&#9615;</div>
     </div>
