@@ -17,7 +17,7 @@ const Education = () => {
           <li>Hack Reactor</li>
           <li>2021</li>
         </ul>
-        <img onMouseOver={changeCertView} className={certView} src="images/certificateSEIHackReactor.jpg" />
+        <img onMouseOver={changeCertView} className={certView} src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/certificateSEIHackReactor.jpg" />
         <h3 className="header">General Studies</h3>
         <ul>
           <li>Southern New Hampshire University</li>
@@ -29,7 +29,7 @@ const Education = () => {
   return (
     <div className="section">
       <h3 className="header">Advanced Software Engineering Immersive</h3>
-      <img onMouseOut={changeCertView} className={certView} src="images/certificateSEIHackReactor.jpg" />
+      <img onMouseOut={changeCertView} className={certView} src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/certificateSEIHackReactor.jpg" />
     </div>
   );
 };

@@ -7,7 +7,7 @@ const Experience = () => {
       <h3 className="header">Croxy</h3>
       <div className="appDescription">An item viewing and shopping application.</div>
       <div className="contactBox">
-        <img src="images/github.png" />
+        <img src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/github.png" />
         <a className="github" href="https://github.com/Chill-Crocs/image-service" target="_blank">github.com/Chill-Crocs/image-service</a>
       </div>
       <ul>
@@ -20,7 +20,7 @@ const Experience = () => {
       <h3 className="header">Understock</h3>
       <div className="appDescription">An item viewing and shopping application.</div>
       <div className="contactBox">
-        <img src="images/github.png" />
+        <img src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/github.png" />
         <a className="github" href="https://github.com/J-EQUAL-MC-SQUARED/reviews" target="_blank">github.com/J-EQUAL-MC-SQUARED/reviews</a>
       </div>
       <ul>
@@ -31,7 +31,7 @@ const Experience = () => {
       <h3 className="header">Checkers</h3>
       <div className="appDescription">An interactive game application.</div>
       <div className="contactBox">
-        <img src="images/github.png" />
+        <img src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/github.png" />
         <a className="github" href="https://github.com/mikegunyan/checkers" target="_blank">github.com/mikegunyan/checkers</a>
       </div>
       <ul>

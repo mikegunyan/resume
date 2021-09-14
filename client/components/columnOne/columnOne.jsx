@@ -11,7 +11,7 @@ const ColumnOne = () => {
 
   return (
     <div className="ColumnOne">
-      <img className="profilePicture" src="images/mike.jpg" />
+      <img className="profilePicture" src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/mike.jpg" />
       <TypeText className="name" preIsComplete={true} text="Michael Gunyan" completePre={completePre} />
       <TypeText className="title" preIsComplete={name} text="Software Engineer" completePre={completePre} />
       <ContactCard />
