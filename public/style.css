@@ -187,10 +187,6 @@ button {
 .widget {
   margin-right: 10%;
 }
-.crudOperations {
-  height: 100px;
-  overflow-x: auto;
-}
 .counterWidgets {
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -198,6 +194,16 @@ button {
 .databaseWidgets {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+}
+.crudOperations {
+  height: 100px;
+  overflow-x: auto;
+}
+.pyramidWidgets {
+  display: flex;
+  max-height: 600px;
+  overflow-x: auto;
+  padding-bottom: 20px;
 }
 /* Modals */
 .modalBackground {
@@ -228,7 +234,85 @@ button {
   margin-left: 25%;
   margin-right: 25%;
 }
-
+/* PYRAMID DESCENT PUZZLE */
+.column {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}
+.pyramidHeader {
+  height: 100px;
+}
+.inputArray, .input, .altInput {
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 1px;
+  padding: 3px;
+  width: 199px;
+}
+.input, .altInput {
+  padding: 2px;
+  width: 49px;
+}
+.altInput {
+  width: 100px;
+}
+.button, .altButton {
+  color: white;
+  background-color: rgb(0, 0, 255);
+  border-radius: 5px;
+  transition: all 1s;
+  margin: 1px;
+  padding: 2px;
+  width: 105px;
+}
+.button:hover, .altButton:hover {
+  background: rgb(255, 0, 0);
+}
+.altButton {
+  width: 207px;
+}
+.graphics {
+  margin-top: 10px;
+}
+.treeRow, .list {
+  display: flex;
+  justify-content: center;
+}
+.treeNode, .item {
+  color: white;
+  text-align: center;
+  margin: 1px 3px;
+  height: 15px;
+  width: 15px;
+  background-color: rgb(255, 0, 0);
+  box-shadow: 0 4px 20px rgba(255, 0, 0);
+  cursor: pointer;
+  outline: none;
+  border-radius: 24px;
+  line-height: 1;
+  padding: 12px;
+}
+.item {
+  background-color: rgb(0, 0, 255);
+  box-shadow: 0 4px 20px rgba(0, 0, 255);
+}
+/* DRAWING BOARD */
+.grid {
+  display: grid;
+  margin: auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  width: fit-content;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+}
+.whiteBox {
+  height: 2px;
+  width: 2px;
+  background-color: white;
+}
+.blackBox {
+  background-color: black;
+}
 
 /****  MISC.  ****/
 .flashTab {
