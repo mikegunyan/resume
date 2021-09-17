@@ -31,6 +31,7 @@ const SkillTabs = ({ skills, changeSkill }) => {
       <button className={skills[0] ? 'activeSkillTab' : 'skillTab'} onClick={() => changeSkill(0)}>Database Management</button>
       <button className={skills[1] ? 'activeSkillTab' : skillsTabClass} onClick={() => {changeSkill(1); setSkillsTabFlash(false);}}>Higher Order Components</button>
       <button className={skills[2] ? 'activeSkillTab' : 'skillTab'} onClick={() => changeSkill(2)}>Pyramid Descent Puzzle</button>
+      <button className={skills[3] ? 'activeSkillTab' : 'skillTab'} onClick={() => changeSkill(3)}>Checkers</button>
     </div>
   );
 };

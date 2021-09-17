@@ -3,7 +3,7 @@ import SectionTabs from './sectionTabs';
 import Section from './section/section';
 
 const ColumnTwo = () => {
-  const [sections, setSections] = useState([true, false, false, false]); // set sections[0] to the only true element
+  const [sections, setSections] = useState([false, false, false, true]); // set sections[0] to the only true element
   const changeSection = (section) => {
     const newSections = [false, false, false, false];
     newSections[section] = true;
