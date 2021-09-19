@@ -10,7 +10,7 @@ const ColumnTwo = () => {
     setSections(newSections);
   };
   return (
-    <div className="ColumnTwo">
+    <div className="columnTwo">
       <SectionTabs sections={sections} changeSection={changeSection} />
       <Section section={sections.indexOf(true)} />
     </div>
