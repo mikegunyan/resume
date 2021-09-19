@@ -15,6 +15,16 @@ button {
   display: grid;
   grid-template-columns: 30% 68%;
 }
+.columnOne {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none;  /* Hide scroll bar in zoom IE and Edge */
+  scrollbar-width: none;  /* Hide scroll bar in zoom Firefox */
+}
+.columnOne::-webkit-scrollbar {
+  display: none; /* Hide scroll bar in zoom */
+}
 
 
 /****  COLUMN ONE  ****/
@@ -205,6 +215,16 @@ button {
   overflow-x: auto;
   padding-bottom: 20px;
 }
+.checkersWidget {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none;  /* Hide scroll bar in zoom IE and Edge */
+  scrollbar-width: none;  /* Hide scroll bar in zoom Firefox */
+}
+.checkersWidget::-webkit-scrollbar {
+  display: none; /* Hide scroll bar in zoom */
+}
 /* Modals */
 .modalBackground {
   position: fixed;
@@ -302,17 +322,16 @@ button {
   display: grid;
   margin: auto;
   grid-template-columns: auto auto auto auto auto auto auto auto;
-  width: fit-content;
+  max-width: fit-content;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
 }
 .piece {
   max-width: 100px;
   max-height: 100px;
-  margin: 25px;
 }
-.redSquare, .blackSquare, .selectedSquare,.selectedPiece {
+.redSquare, .blackSquare, .selectedSquare, .selectedPiece {
   cursor: pointer;
-  background-image: url('images/light.jpg');
+  background-image: url('https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/light.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   height: 50px;
@@ -323,7 +342,7 @@ button {
   align-items: center;
 }
 .blackSquare {
-  background-image: url('images/dark.jpg');
+  background-image: url('https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/dark.jpg');
   cursor: auto;
 }
 .selectedSquare {
@@ -332,7 +351,8 @@ button {
 .selectedPiece {
   filter: brightness(70%);
   transform: scale(1.2);
-  border-radius: 25px;
+  border-radius: 15px;
+  z-index: 2;
 }
 .jumpBackground {
   position: fixed;
@@ -351,13 +371,27 @@ button {
   width: 50%;
 }
 .jumpBox {
-  background-image: url('images/nextJump.jpg');
+  background-image: url('https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/nextJump.jpg');
   margin: 25% 25%;
 }
 .buttonGrid {
   display: flex;
-  margin: 0px;
-  padding: 0px;
+}
+.jumpButton {
+  padding: 8px 12px;
+  margin: 5%;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  transition: ease-out 0.3s;
+  width: 40%;
+}
+.jumpButton:hover {
+  transition: ease-in 0.5s;
+  transform: scale(1.2);
 }
 
 /****  MISC.  ****/

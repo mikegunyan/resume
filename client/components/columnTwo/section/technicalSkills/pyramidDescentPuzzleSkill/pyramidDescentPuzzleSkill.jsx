@@ -108,6 +108,7 @@ const PyramidDescentPuzzleSkill = () => {
               <button className="button" onClick={randomArray}>Random Puzzle</button>
             </div>
           </div>
+          <p>Use the puzzle builder above to build a puzzle. Build a puzzle manually with the input. Put a comma in between each element. Add an element by using the drop down on the left and clicking "Add Element." Build a random puzzle by selecting the number of rows from the drop down menu on the right and clicking "Random Puzzle."</p>
           <Tree sortedArray={sortedArray} />
         </div>
         <div className="column">
@@ -123,13 +124,19 @@ const PyramidDescentPuzzleSkill = () => {
               <button className="altButton" onClick={solveAll}>All Solutions</button>
             </div>
           </div>
+          <p>Select a target in the drop down menu above. Click "Solve" to see the first solution or "All Solutions" to see all solutions for the selected target.</p>
           <div>
             <Solution solution={solution} />
           </div>
         </div>
       </div>
       <h3>Description</h3>
-      <p>TODO: Enter Description here...</p>
+      <p>
+        A Pyramid Descent Puzzle is solved by starting at the top and moving down to the next row. As you move down you move   either left or right multiplying the previous total.
+      </p>
+      <p>
+        The solution or many solutions will be displayed in the directions it takes to get to the bottom. Left will be displayed as "L" and right as "R." For example, "LRLLR." This means it went left, right, left, left, right.
+      </p>
     </div>
   );
 };

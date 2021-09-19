@@ -1,5 +1,6 @@
-let board = () => {
-  return [
+const newBoard = () => {
+  return {
+    board: [
       [['x', 'redSquare', 'selectRed'],
         [null, 'blackSquare', ''],
         ['x', 'redSquare', 'selectRed'],
@@ -71,7 +72,98 @@ let board = () => {
         ['o', 'redSquare', 'selectBlack'],
         [null, 'blackSquare', ''],
         ['o', 'redSquare', 'selectBlack']],
-    ];
-}
+    ],
+    black: 12,
+    red: 12,
+    turn: 'black',
+    autoJumpRed: false,
+    autoJumpBlack: false
+  }
+};
 
-export default board;
+const testBoard = () => {
+  return {
+    board: [
+      [[null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', '']],
+
+      [[null, 'blackSquare', ''],
+        ['o', 'redSquare', 'selectBlack'],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', '']],
+
+      [[null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', '']],
+
+      [[null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', '']],
+
+      [[null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        ['x', 'redSquare', 'selectRed'],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', '']],
+
+      [[null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        ['o', 'redSquare', 'selectBlack'],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', '']],
+
+      [[null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        ['x', 'redSquare', 'selectRed'],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', '']],
+
+      [[null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', ''],
+        [null, 'blackSquare', ''],
+        [null, 'redSquare', '']],
+    ],
+    black: 2,
+    red: 2,
+    turn: 'black',
+    autoJumpRed: false,
+    autoJumpBlack: true,
+    playerOne: 'Test One',
+    playerTwo: 'Test Two',
+  };
+};
+
+export default { newBoard, testBoard };

@@ -9,8 +9,8 @@ const Jump = ({ nextJump, toggleJump, skipJump }) => {
       <div className="formBox jumpBox">
         <h2>Take next jump?</h2>
         <div className="buttonGrid">
-          <button type="button" onClick={toggleJump}>Take it</button>
-          <button type="button" onClick={() => {
+          <button className="jumpButton" type="button" onClick={toggleJump}>Take it</button>
+          <button className="jumpButton" type="button" onClick={() => {
             skipJump();
             toggleJump();
           }}>End Turn</button>
