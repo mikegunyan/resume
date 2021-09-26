@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const TypeText = ({ className, preIsComplete, text, completePre }) => {
+const TypeText = ({ className, preIsComplete, text, completePre, darkMode }) => {
   if (preIsComplete) {
     const index = useRef(0);
     const [string, setString] = useState('');
@@ -41,8 +41,8 @@ const TypeText = ({ className, preIsComplete, text, completePre }) => {
   }
   return (
     <div className="nameBox">
-      <div className='altBlock'>&#9615;</div>
-      <div className={'title black'}>placeholder&#9615;</div>
+      <div className={className === 'title' ? 'altBlock white' : 'altBlock black'}>&#9615;</div>
+      <div className={className === 'title' ? 'title white' : 'title black'}>placeholder&#9615;</div>
     </div>
   )
 };
