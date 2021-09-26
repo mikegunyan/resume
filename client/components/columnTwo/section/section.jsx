@@ -4,22 +4,22 @@ import Education from './education';
 import Experience from './experience';
 import TechnicalSkills from './technicalSkills/technicalSkills';
 
-const Section = ({ section }) => {
+const Section = ({ darkMode, section }) => {
   if (section === 0) {
     return (
-      <About />
+      <About darkMode={darkMode} />
     );
   } else if (section === 1) {
     return (
-      <Education />
+      <Education darkMode={darkMode} />
     );
   } else if (section === 2) {
     return (
-      <Experience />
+      <Experience darkMode={darkMode} />
     );
   }
   return (
-    <TechnicalSkills />
+    <TechnicalSkills darkMode={darkMode} />
   );
 };
 

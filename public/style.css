@@ -1,7 +1,4 @@
 /****  GLOBAL  ****/
-/* body {
-  background-color: black;
-} */
 button {
   cursor: pointer;
 }
@@ -9,12 +6,23 @@ button {
   margin: 40px 0px 10px 40px;
   color: black;
 }
+.darkHeader {
+  margin: 40px 0px 10px 40px;
+  color: rgb(0, 255, 0);
+}
 
 /** LAYOUT **/
 .page {
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  padding: 10px;
   background-color: white;
   display: grid;
   grid-template-columns: 30% 68%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* Hide scroll bar in zoom IE and Edge */
+  scrollbar-width: none;  /* Hide scroll bar in zoom Firefox */
 }
 .columnOne {
   overflow-x: scroll;
@@ -23,19 +31,29 @@ button {
   -ms-overflow-style: none;  /* Hide scroll bar in zoom IE and Edge */
   scrollbar-width: none;  /* Hide scroll bar in zoom Firefox */
 }
-.columnOne::-webkit-scrollbar {
+.columnOne::-webkit-scrollbar, .page::-webkit-scrollbar {
   display: none; /* Hide scroll bar in zoom */
 }
 
 
 /****  COLUMN ONE  ****/
 /** PROFILE **/
+.darkSwitch {
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+.darkMode {
+  margin: auto 5px;
+}
 .profilePicture {
-  margin: 30px 0px 0px 30px;
+  margin: 10px 0px 0px 30px;
   max-height: 200px;
   max-width: 200px;
-  border: 2px solid rgb(0, 255, 0);
+  border: 2px solid white;
   border-radius: 50px;
+}
+.darkBorder {
+  border: 2px solid rgb(0, 255, 0);
 }
 .name {
   font-size: 40px;
@@ -58,13 +76,11 @@ button {
 }
 .block {
   font-size: 40px;
-  color: white;
   margin: 0px;
   padding: 0px;
 }
 .altBlock {
   font-size: 20px;
-  color: white;
   margin: 0px;
   padding: 0px;
 }
@@ -113,6 +129,29 @@ button {
   padding: 0px;
 }
 .sectionTab {
+  border: 2px solid white;
+  border-left: 0;
+  border-right: 1px solid white;
+  border-bottom: 2px solid black;
+  border-radius: 10px 10px 0px 0px;
+  color: black;
+  background-color: rgb(182, 182, 182);
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+.activeSectionTab {
+  border: 2px solid black;
+  border-bottom: 0;
+  border-radius: 10px 10px 0px 0px;
+  color: black;
+  background-color: white;
+  height: 50px;
+  padding: 0px;
+  margin: 0px;
+}
+.darkSectionTab {
   border: 2px solid black;
   border-left: 0;
   border-right: 1px solid black;
@@ -125,7 +164,7 @@ button {
   margin: 0px;
   cursor: pointer;
 }
-.activeSectionTab {
+.darkActiveSectionTab {
   border: 2px solid rgb(0, 255, 0);
   border-bottom: 0;
   border-radius: 10px 10px 0px 0px;
@@ -138,6 +177,14 @@ button {
 
 /** SECTION LAYOUT **/
 .section {
+  border: 2px solid black;
+  border-top: 1px solid white;
+  color: black;
+  min-height: 1000px;
+  margin: 0px;
+  padding: 20px;
+}
+.darkSection {
   border: 2px solid rgb(0, 255, 0);
   border-top: 1px solid black;
   color: rgb(0, 255, 0);
@@ -191,6 +238,7 @@ button {
 /* COLUMNTWO */
 .skillColumnTwo {
   padding: 0px 30px;
+  color: rgb(0, 255, 0);
   background-color: rgb(37, 37, 37);
   border-radius: 0px 10px 10px 10px;
   min-height: 1000px;
@@ -430,7 +478,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: rgb(0, 255, 0);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -440,7 +488,7 @@ button {
   content: "";
   height: 26px;
   width: 26px;
-  left: 4px;
+  left: 30px;
   bottom: 4px;
   background-color: white;
   -webkit-transition: .4s;
@@ -448,17 +496,17 @@ button {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: rgb(200, 200, 200);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px rgb(200, 200, 200);
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(-26px);
+  -ms-transform: translateX(-26px);
+  transform: translateX(-26px);
 }
 
 /* Rounded sliders */

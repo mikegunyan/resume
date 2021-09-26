@@ -6,14 +6,13 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      darkMode: false
+      darkMode: true
     }
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
   }
 
   toggleDarkMode() {
     const { darkMode } = this.state;
-    console.log(darkMode)
     this.setState({ darkMode: !darkMode });
   }
 

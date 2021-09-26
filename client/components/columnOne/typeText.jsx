@@ -1,6 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const TypeText = ({ className, preIsComplete, text, completePre, darkMode }) => {
+  const whichClass = () => {
+    if (darkMode) {
+      if (className === 'name') {
+        return 'block black'
+      }
+      return 'altBlock black'
+    } else {
+      if (className === 'name') {
+        return 'block white'
+      }
+      return 'altBlock white'
+    }
+  };
   if (preIsComplete) {
     const index = useRef(0);
     const [string, setString] = useState('');
@@ -27,22 +40,22 @@ const TypeText = ({ className, preIsComplete, text, completePre, darkMode }) => 
     if (block) {
       return (
         <div className="nameBox">
-          <div className={className === 'name' ? 'block' : 'altBlock'}>&#9615;</div>
-          <div className={className}>{string}&#9615;</div>
+          <div className={whichClass()}>&#9615;</div>
+          <div className={darkMode ? `${className} dark` : className}>{string}&#9615;</div>
         </div>
       )
     }
     return (
       <div className="nameBox">
-        <div className={className === 'name' ? 'block' : 'altBlock'}>&#9615;</div>
-        <div className={className}>{string}</div>
+        <div className={whichClass()}>&#9615;</div>
+        <div className={darkMode ? `${className} dark` : className}>{string}</div>
       </div>
     )
   }
   return (
     <div className="nameBox">
-      <div className={className === 'title' ? 'altBlock white' : 'altBlock black'}>&#9615;</div>
-      <div className={className === 'title' ? 'title white' : 'title black'}>placeholder&#9615;</div>
+      <div className={whichClass()}>&#9615;</div>
+      <div className={darkMode ? 'title black' : 'title white'}>placeholder&#9615;</div>
     </div>
   )
 };

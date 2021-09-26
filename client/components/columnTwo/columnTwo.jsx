@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SectionTabs from './sectionTabs';
 import Section from './section/section';
 
-const ColumnTwo = () => {
+const ColumnTwo = ({ darkMode }) => {
   const [sections, setSections] = useState([true, false, false, false]); // set sections[0] to the only true element
   const changeSection = (section) => {
     const newSections = [false, false, false, false];
@@ -11,8 +11,8 @@ const ColumnTwo = () => {
   };
   return (
     <div className="columnTwo">
-      <SectionTabs sections={sections} changeSection={changeSection} />
-      <Section section={sections.indexOf(true)} />
+      <SectionTabs darkMode={darkMode} sections={sections} changeSection={changeSection} />
+      <Section darkMode={darkMode} section={sections.indexOf(true)} />
     </div>
   );
 };

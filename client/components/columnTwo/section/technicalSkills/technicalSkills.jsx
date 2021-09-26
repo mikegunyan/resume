@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SkillTabs from './skillTabs';
 import Skill from './skill';
 
-const TechnicalSkills = () => {
+const TechnicalSkills = ({ darkMode }) => {
   const [skills, setSkills] = useState([true, false, false, false]); // set sections[0] to the only true element
   const changeSkill = (skill) => {
     const newSkills = [false, false, false, false];
@@ -10,7 +10,7 @@ const TechnicalSkills = () => {
     setSkills(newSkills);
   };
   return (
-    <div className="section">
+    <div className={darkMode ? 'darkSection' : 'section'}>
       <div className="skillsSection">
         <SkillTabs skills={skills} changeSkill={changeSkill} />
         <Skill skill={skills.indexOf(true)} />
