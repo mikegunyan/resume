@@ -1,27 +1,27 @@
 import React from 'react';
 
-const ContactCard = () => {
+const ContactCard = ({ darkMode }) => {
   return (
     <div className="contactCard">
       <div className="contactBox">
-        <img src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/location.png" />
-        <p className="location">Casper, Wyoming, U.S.A.</p>
+        <img src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/${darkMode ? 'dark' : 'light'}/location.png`} />
+        <p className={darkMode ? 'location dark' : 'location'}>Casper, Wyoming, U.S.A.</p>
       </div>
       <div className="contactBox">
-        <img src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/telephone.png" />
-        <p className="telephone">307-797-3567</p>
+        <img src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/${darkMode ? 'dark' : 'light'}/telephone.png`} />
+        <p className={darkMode ? 'telephone dark' : 'telephone'}>307-797-3567</p>
       </div>
       <div className="contactBox">
-        <img src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/email.png" />
-        <p className="email">mrgunyan@gmail.com</p>
+        <img src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/${darkMode ? 'dark' : 'light'}/email.png`} />
+        <p className={darkMode ? 'email dark' : 'email'}>mrgunyan@gmail.com</p>
       </div>
       <div className="contactBox">
-        <img src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/linkedIn.png" />
-        <a className="linkedIn" href="https://www.linkedin.com/in/michael-gunyan" target="_blank">linkedin.com/in/michael-gunyan</a>
+        <img src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/${darkMode ? 'dark' : 'light'}/linkedIn.png`} />
+        <a className={darkMode ? 'linkedIn dark' : 'linkedIn'} href="https://www.linkedin.com/in/michael-gunyan" target="_blank">linkedin.com/in/michael-gunyan</a>
       </div>
       <div className="contactBox">
-        <img src="https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/github.png" />
-        <a className="github" href="https://github.com/mikegunyan" target="_blank">github.com/mikegunyan</a>
+        <img src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/${darkMode ? 'dark' : 'light'}/github.png`} />
+        <a className={darkMode ? 'github dark' : 'github'} href="https://github.com/mikegunyan" target="_blank">github.com/mikegunyan</a>
       </div>
     </div>
   );
