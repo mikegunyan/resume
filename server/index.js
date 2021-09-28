@@ -66,6 +66,26 @@ app.options('/people', (req, res) => {
   });
 })
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Listening on port:${port}...`)
 });
+
+const closeProcess = async (signal) => {
+  console.log(`\n${signal} signal received: Process Terminating!`)
+  await db.end(async (err) => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Disconnected from MySql DB!')
+        await server.close(() => {
+          console.log('Server closed!');
+        })
+        console.log('Process Terminated!')
+      }
+      process.exit(signal === 'SIGINT' || signal === 'SIGTERM' ? 0 : 1)
+    });
+}
+process.on('uncaughtException', closeProcess)
+process.on('unhandledRejection', closeProcess)
+process.on('SIGINT', closeProcess)
+process.on('SIGTERM', closeProcess)
