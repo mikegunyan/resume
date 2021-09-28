@@ -1,21 +1,18 @@
-# What image do you want to start building on?
-FROM node:14.2.0-alpine3.11
+# --------------> The build image
+FROM node:latest AS build
+ARG NPM_TOKEN
+WORKDIR /usr/src/app
+COPY package*.json /usr/src/app/
+RUN echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc && \
+   npm ci --only=production && \
+   rm -f .npmrc
 
-# Make a folder in your image where your app's source code can live
-RUN mkdir -p /src/app
-
-# Tell your container where your app's source code will live
-WORKDIR /src/app
-
-# What source code do you what to copy, and where to put it?
-COPY . /src/app
-
-# Does your app have any dependencies that should be installed?
-RUN yarn install
-
-# What port will the container talk to the outside world with once created?
-EXPOSE 80
-
-# How do you start your app?
-CMD [ "node", "server/index.js" ]
-
+# --------------> The production image
+# FROM node:lts-alpine@sha256:8c94a0291133e16b92be5c667e0bc35930940dfa7be544fb142e25f8e4510a45
+# RUN apk add dumb-init
+# ENV NODE_ENV production
+# USER node
+# WORKDIR /usr/src/app
+# COPY --chown=node:node --from=mikegunyan/resume /usr/src/app/node_modules /usr/src/app/node_modules
+# COPY --chown=node:node . /usr/src/app
+# CMD ["dumb-init", "node", "server/index.js"]

@@ -105,3 +105,6 @@ dist
 
 # packages
 package-lock.json
+
+# production
+.npmrc
