@@ -3,9 +3,9 @@ const mysql = require('mysql');
 
 // create a connection to database and assign to variable
 const db = mysql.createConnection({
-  host: '54.241.75.143',
+  host: process.env.HOST || 'localhost',
   user: 'root',
-  password: 'crudroot',
+  password: process.env.PASSWORD || '',
   database: 'crud'
 });
 
