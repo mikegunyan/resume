@@ -14,7 +14,8 @@ db.connect(err => {
   if (err) {
     console.log(err);
   } else {
-    console.log(`MySQL Database connected... ${new Date()}`)
+    const date = new Date().toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
+    console.log(`${date} ➡ MySQL Database connected...`)
   }
 });
 

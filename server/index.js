@@ -67,15 +67,17 @@ app.options('/people', (req, res) => {
 })
 
 const server = app.listen(port, () => {
-  console.log(`Server started! Listening on port:${port}... ${new Date()}`)
+  const date = new Date().toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
+  console.log(`${date} ➡ Server started! Listening on port:${port}...`)
 });
 
 const resetServer = (signal) => {
-  console.log(`\n${signal} signal received! Closing server... ${new Date()}`)
+  const date = new Date().toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Denver', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false });
+  console.log(`\n${date} ➡ ${signal} signal received! Closing server...`)
   server.close(()=>{
-    console.log('Server closed! Restarting server...');
+    console.log(`${date} ➡ Server closed! Restarting server...`);
     server.listen(port, () => {
-      console.log(`Server restarted! Listening on port:${port}... ${new Date()}`)
+      console.log(`${date} ➡ Server restarted! Listening on port:${port}...`)
     });
   });
 }
