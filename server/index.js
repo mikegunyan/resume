@@ -21,7 +21,7 @@ const establishConnection = () => {
   db.connect(err => {
     if (err) {
       console.log(`${date} ➡ MySQL ERROR! Re-establishing connection... ↙\n${err}`);
-      setTimeout(establishConnection, 2000);
+      establishConnection();
     } else {
       console.log(`${date} ➡ MySQL Database connected...`)
     }
