@@ -1,7 +1,7 @@
 import React from 'react';
 import Board from './board';
 
-const CheckersSkill = () => {
+const Checkers = () => {
   return (
     <div className="skillColumnTwo">
       <h1 className="skillTitle">Checkers</h1>
@@ -17,4 +17,4 @@ const CheckersSkill = () => {
   );
 }
 
-export default CheckersSkill;
+export default Checkers;
