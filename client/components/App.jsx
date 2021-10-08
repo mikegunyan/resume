@@ -1,40 +1,96 @@
 import React from 'react';
-import axios from 'axios';
-import ColumnOne from './columnOne/columnOne';
-import ColumnTwo from './columnTwo/columnTwo';
+import Navigator from './navigator/navigator';
+import Home from './home/home';
+import About from './about/about';
+import Education from './education/education';
+import Experience from './experience/experience';
+import Portfolio from './portfolio/portfolio';
+import ContactMe from './contactMe/contactMe';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      visitors: 0,
-      darkMode: true
-    }
+      windowTop: true,
+      navigatorClass: 'lightInitialNavigator',
+      darkmode: false,
+      theme: {
+        initialNavigator: 'lightInitialNavigator',
+        navigator: 'lightNavigator',
+        home: 'lightHome',
+        about: 'lightAbout',
+        education: 'lightEducation',
+        experience: 'lightExperience',
+        portfolio: 'lightPortfolio',
+        contactMe: 'lightContactMe'
+      }
+    };
+    this.handleScroll = this.handleScroll.bind(this);
+    this.setTheme = this.setTheme.bind(this);
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
-    this.getVisitors = this.getVisitors.bind(this);
   }
 
   componentDidMount() {
-    this.getVisitors();
+    window.addEventListener('scroll', this.handleScroll);
   }
 
-  getVisitors() {
-    axios.get('/visitors')
-      .then((data) => this.setState({ visitors: data.data[0].count }))
-      .catch((err) => console.log(err));
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    const { theme } = this.state;
+    if (event.path[1].pageYOffset > 10) {
+      this.setState({ navigatorClass: `${theme.initialNavigator} ${theme.navigator}`, windowTop: false });
+    } else {
+      this.setState({ navigatorClass: `${theme.initialNavigator}`, windowTop: true });
+    }
+  }
+
+  setTheme(theme) {
+    const { windowTop } = this.state;
+    if (theme === 'lightTheme') {
+      this.setState({ theme: {
+        initialNavigator: 'lightInitialNavigator',
+        navigator: `lightNavigator`,
+        home: 'lightHome',
+        about: 'lightAbout',
+        education: 'lightEducation',
+        experience: 'lightExperience',
+        portfolio: 'lightPortfolio',
+        contactMe: 'lightContactMe'
+      }, navigatorClass: `lightInitialNavigator${windowTop ? '' : ' lightNavigator'}` })
+    } else {
+      this.setState({ theme: {
+        initialNavigator: 'darkInitialNavigator',
+        navigator: `darkNavigator`,
+        home: 'darkHome',
+        about: 'darkAbout',
+        education: 'darkEducation',
+        experience: 'darkExperience',
+        portfolio: 'darkPortfolio',
+        contactMe: 'darkContactMe'
+      }, navigatorClass: `darkInitialNavigator${windowTop ? '' : ' darkNavigator'}` })
+    }
   }
 
   toggleDarkMode() {
-    const { darkMode } = this.state;
-    this.setState({ darkMode: !darkMode });
+    const { darkmode } = this.state;
+    this.setState({ darkmode: !darkmode });
+    this.setTheme(`${darkmode ? 'light' : 'dark'}Theme`)
   }
 
   render() {
-    const { darkMode } = this.state;
+    const { navigatorClass, theme } = this.state;
     return (
-      <div className={darkMode ? 'page dark' : 'page'}>
-        <ColumnOne toggleDarkMode={this.toggleDarkMode} darkMode={darkMode} />
-        <ColumnTwo darkMode={darkMode} />
+      <div onScroll={this.handleScroll}>
+        <Navigator navigatorClass={navigatorClass} toggleDarkMode={this.toggleDarkMode} />
+        <Home theme={theme.home} />
+        <About theme={theme.about} />
+        <Education theme={theme.education} />
+        <Experience theme={theme.experience} />
+        <Portfolio theme={theme.portfolio} />
+        <ContactMe theme={theme.contactMe} />
       </div>
     );
   }

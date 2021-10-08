@@ -5,7 +5,7 @@ import Read from './read';
 import Update from './update';
 import Delete from './delete';
 
-const DatabaseManagementSkill = () => {
+const DatabaseManagement = () => {
   const [people, setPeople] = useState([]);
 
   useEffect(() => {
@@ -38,4 +38,4 @@ const DatabaseManagementSkill = () => {
   );
 };
 
-export default DatabaseManagementSkill;
+export default DatabaseManagement;

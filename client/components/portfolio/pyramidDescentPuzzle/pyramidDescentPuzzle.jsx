@@ -3,7 +3,7 @@ import Tree from './tree';
 import Solution from './solution';
 import utils from './utils';
 
-const PyramidDescentPuzzleSkill = () => {
+const PyramidDescentPuzzle = () => {
   const [inputArray, setInputArray] = useState([1,2,3]);
   const [sortedArray, setSortedArray] = useState([[1], [2, 3]]);
   const [targets, setTargets] = useState([2, 3]);
@@ -141,4 +141,4 @@ const PyramidDescentPuzzleSkill = () => {
   );
 };
 
-export default PyramidDescentPuzzleSkill;
+export default PyramidDescentPuzzle;
