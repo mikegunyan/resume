@@ -6,7 +6,7 @@ import TypeText from './typeText';
 import DarkMode from './darkMode';
 import { Link } from 'react-scroll'
 
-const Navigator = ({ navigatorClass, toggleDarkMode }) => {
+const Navigator = ({ documentHeight, navigatorClass, toggleDarkMode }) => {
   return (
     <div className={navigatorClass}>
       <div className="nameCard">
@@ -18,8 +18,8 @@ const Navigator = ({ navigatorClass, toggleDarkMode }) => {
         <button className="navButton" onClick={() => window.scrollTo({ top: 350 })}>About</button>
         <button className="navButton" onClick={() => window.scrollTo({ top: 1150 })}>Education</button>
         <button className="navButton" onClick={() => window.scrollTo({ top: 1950 })}>Experience</button>
-        <button className="navButton" onClick={() => window.scrollTo({ top: 2950 })}>Portfolio</button>
-        <button className="navButton" onClick={() => window.scrollTo({ top: 3500 })}>Contact Me</button>
+        <button className="navButton" onClick={() => window.scrollTo({ top: documentHeight * .70 })}>Portfolio</button>
+        <button className="navButton" onClick={() => window.scrollTo({ top: documentHeight })}>Contact Me</button>
       </div>
       <DarkMode toggleDarkMode={toggleDarkMode} />
     </div>
