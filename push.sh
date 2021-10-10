@@ -28,4 +28,4 @@ docker rmi mikegunyan/resume mikegunyan/build
 
 echo "➡ Production Push complete"
 
-ssh -i "../awsKeys/resume.pem" ec2-user@ec2-52-53-58-239.us-west-1.compute.amazonaws.com 'bash -s'  < pull.sh
+ssh -i "../awsKeys/resume.pem" ec2-user@ec2-52-53-58-239.us-west-1.compute.amazonaws.com 'bash -s'  < pull.sh $1 $2

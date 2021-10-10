@@ -106,11 +106,5 @@ dist
 # packages
 package-lock.json
 
-# Docker
-Dockerfile
-Dockerfile1
-Dockerfile2
-
 # production
 .npmrc
-*.sh

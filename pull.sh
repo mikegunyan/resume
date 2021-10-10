@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "➡ Production Pull started"
+echo "➡ Production Pull started$1 $2"
 echo "➡ Removing old container"
 docker rm -f mike
 
