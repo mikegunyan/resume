@@ -3,6 +3,29 @@
 echo "➡ Production Push started"
 
 echo "➡ Pushing to Github"
-# branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 git add . && git commit -m"Docker Push"
 git push origin master
+
+echo "➡ Building Docker build image"
+docker build -t mikegunyan/build .
+
+echo "➡ Changing Dockerfile"
+mv Dockerfile Dockerfile1
+mv Dockerfile2 Dockerfile
+
+echo "➡ Building Docker production image"
+docker build . -t mikegunyan/resume --secret id=npmrc,src=.npmrc
+
+echo "➡ Resetting Dockerfile"
+mv Dockerfile Dockerfile2
+mv Dockerfile1 Dockerfile
+
+echo "➡ Pushing to Dockerhub"
+docker push mikegunyan/resume
+
+echo "➡ Removing Docker images"
+docker rmi mikegunyan/resume mikegunyan/build
+
+echo "➡ Production Push complete"
+
+ssh -i "../awsKeys/resume.pem" ec2-user@ec2-52-53-58-239.us-west-1.compute.amazonaws.com 'bash -s'  < pull.sh
