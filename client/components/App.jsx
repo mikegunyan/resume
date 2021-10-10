@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import Navigator from './navigator/navigator';
 import Home from './home/home';
 import About from './about/about';
@@ -32,6 +33,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    axios.get('/visitors')
     this.setState({ documentHeight: document.body.offsetHeight });
     window.addEventListener('scroll', this.handleScroll);
   }
