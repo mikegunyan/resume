@@ -1,251 +1,269 @@
 /****  GLOBAL  ****/
-button {
-  cursor: pointer;
+body {
+  /* display: flex; */
+  margin: 0px;
+  padding: 0px;
 }
-.header {
-  margin: 40px 0px 10px 40px;
-  color: black;
+button:focus, input:focus, select:focus {
+  outline: none;
 }
-.darkHeader {
-  margin: 40px 0px 10px 40px;
-  color: rgb(0, 255, 0);
+a {
+  color: rgb(140, 140, 253);
+}
+ul {
+  list-style-type: none;
 }
 
-/** LAYOUT **/
-.page {
+/** Navigation Header **/
+/* Navigator */
+.lightInitialNavigator {
+  margin: 25px 1%;
   position: fixed;
-  top: 0; bottom: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  height: 100px;
+  background-color: white;
+  color: black;
+  z-index: 2;
+  font-size: 18px;
+  transition: ease-in 0.5s;
+  box-shadow: none;
+}
+.darkInitialNavigator {
+  margin: 25px 1%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  height: 100px;
+  background-color: rgb(180, 180, 180);
+  color: black;
+  z-index: 2;
+  font-size: 18px;
+  transition: ease-in 0.5s;
+  box-shadow: none;
+}
+.lightNavigator {
+  transition: ease-in 0.5s;
+  margin: 10px;
+  height: 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+  width: 99%;
+  background-color: rgb(214, 214, 214);
+}
+.darkNavigator {
+  transition: ease-in 0.5s;
+  margin: 10px;
+  height: 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+  width: 99%;
+  background-color: rgb(90, 90, 90);
+}
+/* NameCard */
+.nameCard {
+  min-width: 150px;
+  margin: 0px;
   padding: 10px;
-  background-color: white;
-  display: grid;
-  grid-template-columns: 30% 68%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -ms-overflow-style: none;  /* Hide scroll bar in zoom IE and Edge */
-  scrollbar-width: none;  /* Hide scroll bar in zoom Firefox */
 }
-.columnOne {
-  overflow-x: scroll;
+/* NavCard */
+.navCard {
+  max-width: 800px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 0 5%;
   overflow-y: hidden;
-  white-space: nowrap;
-  -ms-overflow-style: none;  /* Hide scroll bar in zoom IE and Edge */
-  scrollbar-width: none;  /* Hide scroll bar in zoom Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.columnOne::-webkit-scrollbar, .page::-webkit-scrollbar {
-  display: none; /* Hide scroll bar in zoom */
+.navCard::-webkit-scrollbar {
+  display: none;
 }
-
-
-/****  COLUMN ONE  ****/
-/** PROFILE **/
-.darkSwitch {
-  display: grid;
-  grid-template-columns: min-content auto;
-}
-.darkMode {
-  margin: auto 5px;
-}
-.profilePicture {
-  margin: 10px 0px 0px 30px;
-  max-height: 200px;
-  max-width: 200px;
-  border: 2px solid white;
-  border-radius: 50px;
-}
-.darkBorder {
-  border: 2px solid rgb(0, 255, 0);
-}
-.name {
-  font-size: 40px;
+.navButton {
+  transition: ease-in 0.25s;
+  cursor: pointer;
+  background-color: transparent;
   color: black;
+  border: none;
+  height: 40px;
+  margin: 2px;
+  min-width: 100px;
+  font-size: 18px;
+}
+.navButton:hover {
+  transition: ease-in 0.25s;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+}
+
+/** Sections **/
+/* Home */
+.lightHome {
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
+  height: 400px;
+  background-image: url("https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/birds.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 40%;
 }
-.title {
-  font-size: 20px;
-  margin: 0px 0px 20px 20px;
-  padding: 0px;
+.darkHome {
+  margin: 0px;
+  padding: 10px;
+  height: 400px;
+  background-color: rgb(180, 180, 180);
+  background-image: url("https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/birds.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 40%;
 }
-.nameBox {
+/* About */
+.lightAbout {
+  margin: 0px;
+  padding: 10px;
+  height: 800px;
+  background-color: rgb(214, 214, 214);
+}
+.darkAbout {
+  margin: 0px;
+  padding: 10px;
+  height: 800px;
+  background-color: rgb(70, 70, 70);
+  color: rgb(255, 255, 255);
+}
+.picture {
+  margin: 50px 40%;
+  max-width: 20%;
+  max-height: 300px;
+  border-radius: 25px;
+}
+.about {
+  display: flex;
+  justify-content: center;
+}
+.paragraph {
+  margin: 0px 10px;
+  max-height: 400px;
+  max-width: 400px;
+}
+.skills {
+  margin: 0px 10px;
+}
+.technicalSkills {
   display: grid;
   grid-template-columns: auto auto;
-  width: fit-content;
-  padding: 0px;
+}
+/* Education */
+.lightEducation {
+  width: 50%;
   margin: 0px;
-  align-items: center;
+  padding: 10px 25%;
+  height: 800px;
 }
-.block {
-  font-size: 40px;
+.darkEducation {
+  width: 50%;
   margin: 0px;
-  padding: 0px;
-}
-.altBlock {
-  font-size: 20px;
-  margin: 0px;
-  padding: 0px;
-}
-.black {
-  color: black;
-}
-.white {
-  color: white;
-}
-
-/** CONTACT CARD **/
-.contactCard {
-  padding: 0px;
-  margin-top: 10px;
-}
-.contactBox {
-  display: grid;
-  grid-template-columns: auto auto;
-  width: fit-content;
-  padding: 0px;
-  margin-top: 5px;
-  align-items: center;
-}
-.location, .telephone, .email, .linkedIn, .github, .skillsList {
-  font-size: 20px;
-  color: black;
-  margin: 0px;
-  margin-left: 15px;
-  padding: 0px;
-}
-
-/** SKILLS LIST **/
-.skillsList {
-  display: grid;
-  grid-template-columns: 35% 35%;
-}
-
-
-/****  COLUMN TWO  ****/
-/** SECTION TABS LAYOUT **/
-.sectionTabs {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  margin: 0px;
-  margin-top: 30px;
-  padding: 0px;
-}
-.sectionTab {
-  border: 2px solid white;
-  border-left: 0;
-  border-right: 1px solid white;
-  border-bottom: 2px solid black;
-  border-radius: 10px 10px 0px 0px;
-  color: black;
-  background-color: rgb(182, 182, 182);
-  height: 50px;
-  padding: 0px;
-  margin: 0px;
-  cursor: pointer;
-}
-.activeSectionTab {
-  border: 2px solid black;
-  border-bottom: 0;
-  border-radius: 10px 10px 0px 0px;
-  color: black;
-  background-color: white;
-  height: 50px;
-  padding: 0px;
-  margin: 0px;
-}
-.darkSectionTab {
-  border: 2px solid black;
-  border-left: 0;
-  border-right: 1px solid black;
-  border-bottom: 2px solid rgb(0, 255, 0);
-  border-radius: 10px 10px 0px 0px;
-  color: white;
-  background-color: rgb(61, 61, 61);
-  height: 50px;
-  padding: 0px;
-  margin: 0px;
-  cursor: pointer;
-}
-.darkActiveSectionTab {
-  border: 2px solid rgb(0, 255, 0);
-  border-bottom: 0;
-  border-radius: 10px 10px 0px 0px;
-  color: white;
-  background-color: black;
-  height: 50px;
-  padding: 0px;
-  margin: 0px;
-}
-
-/** SECTION LAYOUT **/
-.section {
-  border: 2px solid black;
-  border-top: 1px solid white;
-  color: black;
-  min-height: 1000px;
-  margin: 0px;
-  padding: 20px;
-}
-.darkSection {
-  border: 2px solid rgb(0, 255, 0);
-  border-top: 1px solid black;
-  color: rgb(0, 255, 0);
-  min-height: 1000px;
-  margin: 0px;
-  padding: 20px;
-}
-.appDescription {
-  margin-left: 40px;
+  padding: 10px 25%;
+  height: 800px;
+  background-color: rgb(180, 180, 180);
 }
 .cert {
-  margin-left: 40px;
-  width: 100px;
+  max-width: 300px;
+  max-height: 300px;
+}
+/* Experience */
+.lightExperience {
+  text-align: right;
+  width: 50%;
+  margin: 0px;
+  padding: 10px 25%;
+  height: fit-content;
+  background-color: rgb(214, 214, 214);
+}
+.darkExperience {
+  text-align: right;
+  width: 50%;
+  margin: 0px;
+  padding: 10px 25%;
+  height: fit-content;
+  background-color: rgb(70, 70, 70);
+  color: rgb(255, 255, 255);
+}
+.contactBox {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+/* Portfolio */
+.lightPortfolio {
+  width: 50%;
+  margin: 0px;
+  padding: 10px 25%;
+  height: 700px;
+}
+.darkPortfolio {
+  width: 50%;
+  margin: 0px;
+  padding: 10px 25%;
+  height: 700px;
+  background-color: rgb(180, 180, 180);
+}
+.box {
   cursor: pointer;
 }
-.certZoom {
-  width: 90%;
-  cursor: pointer;
-}
-
-/** TECHNICAL SKILLS **/
-.skillsSection {
-  display: grid;
-  grid-template-columns: 20% 80%;
-}
-/* SKILL TABS LAYOUT / COLUMNONE */
-.skillTabs {
-  margin: 0px;
-  padding: 0px;
-}
-.skillTab {
-  border: none;
-  border-radius: 10px 0px 0px 10px;
-  color: white;
-  background-color: rgb(61, 61, 61);
-  width: 100%;
-  height: 50px;
-  padding: 0px;
-  margin: 0px;
-}
-.activeSkillTab {
-  border: none;
-  border-radius: 10px 0px 0px 10px;
-  width: 100%;
-  color: white;
-  background-color: rgb(37, 37, 37);
-  height: 50px;
-  padding: 0px;
-  margin: 0px;
-}
-/* COLUMNTWO */
-.skillColumnTwo {
-  padding: 0px 30px;
-  color: rgb(0, 255, 0);
-  background-color: rgb(37, 37, 37);
-  border-radius: 0px 10px 10px 10px;
-  min-height: 1000px;
-}
-.skillTitle {
+.techTitle {
   text-align: center;
 }
+.techModal {
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: rgba(180, 180, 180);
+  z-index: 2;
+}
+.techBox {
+  overflow-x: auto;
+  padding: 10px;
+  width: 80%;
+  max-height: 950px;
+  margin: 10px 10%;
+}
+.techChanger {
+  position: fixed;
+  top: 60px;
+  right: 0;
+}
+/* Contact Me */
+.contactMeHeader {
+  text-align: center;
+  margin: 0px;
+  padding-top: 25px;
+  background-color: rgb(214, 214, 214);
+}
+.lightContactMe {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px;
+  padding: 10px;
+  height: 300px;
+  background-color: rgb(214, 214, 214);
+}
+.darkContactMe {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0px;
+  padding: 10px;
+  height: 300px;
+  background-color: rgb(70, 70, 70);
+  color: rgb(255, 255, 255);
+}
+.contactMe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 /* SKILL WIDGETS */
 .widget {
   margin-right: 10%;
@@ -282,8 +300,8 @@ button {
 .modalBackground {
   position: fixed;
   top: 0; bottom: 0; left: 0; right: 0;
-  background-color: black;
-  z-index: 2;
+  background-color: rgba(180, 180, 180);
+  z-index: 3;
 }
 .modalBox {
   color: rgb(0, 255, 0);
@@ -445,81 +463,4 @@ button {
 .jumpButton:hover {
   transition: ease-in 0.5s;
   transform: scale(1.2);
-}
-
-/****  MISC.  ****/
-.flashTab {
-  background-color: rgb(0, 255, 0);
-  color: black;
-}
-
-
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(0, 255, 0);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 30px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: rgb(200, 200, 200);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px rgb(200, 200, 200);
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(-26px);
-  -ms-transform: translateX(-26px);
-  transform: translateX(-26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-
-.dark {
-  background-color: black;
-  color: rgb(0, 255, 0);
 }

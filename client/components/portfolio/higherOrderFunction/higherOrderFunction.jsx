@@ -3,7 +3,7 @@ import ClickCounter from './clickCounter';
 import HoverCounter from './hoverCounter';
 import ChangeCounter from './changeCounter';
 
-const HigherOrderFunctionSkill = () => {
+const HigherOrderFunction = () => {
   return (
     <div className="skillColumnTwo">
       <h1 className="skillTitle">Higher Order Components</h1>
@@ -18,4 +18,4 @@ const HigherOrderFunctionSkill = () => {
   );
 };
 
-export default HigherOrderFunctionSkill;
+export default HigherOrderFunction;
