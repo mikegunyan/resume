@@ -11,6 +11,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      documentHeight: 0,
       windowTop: true,
       navigatorClass: 'lightInitialNavigator',
       darkmode: false,
@@ -31,6 +32,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.setState({ documentHeight: document.body.offsetHeight });
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -81,10 +83,10 @@ class App extends React.Component {
   }
 
   render() {
-    const { navigatorClass, theme } = this.state;
+    const { documentHeight, navigatorClass, theme } = this.state;
     return (
       <div onScroll={this.handleScroll}>
-        <Navigator navigatorClass={navigatorClass} toggleDarkMode={this.toggleDarkMode} />
+        <Navigator documentHeight={documentHeight} navigatorClass={navigatorClass} toggleDarkMode={this.toggleDarkMode} />
         <Home theme={theme.home} />
         <About theme={theme.about} />
         <Education theme={theme.education} />
