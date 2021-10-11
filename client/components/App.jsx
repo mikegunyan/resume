@@ -25,7 +25,8 @@ class App extends React.Component {
         experience: 'lightExperience',
         portfolio: 'lightPortfolio',
         contactMe: 'lightContactMe'
-      }
+      },
+      visitors: []
     };
     this.handleScroll = this.handleScroll.bind(this);
     this.setTheme = this.setTheme.bind(this);
@@ -34,6 +35,10 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('/visitors')
+      .then((data) => {
+        this.setState({ visitors : data.data });
+      })
+      .catch((err) => console.log(err));
     this.setState({ documentHeight: document.body.offsetHeight });
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -85,7 +90,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { documentHeight, navigatorClass, theme } = this.state;
+    const { documentHeight, navigatorClass, theme, visitors } = this.state;
     return (
       <div onScroll={this.handleScroll}>
         <Navigator documentHeight={documentHeight} navigatorClass={navigatorClass} toggleDarkMode={this.toggleDarkMode} />
@@ -93,7 +98,7 @@ class App extends React.Component {
         <About theme={theme.about} />
         <Education theme={theme.education} />
         <Experience theme={theme.experience} />
-        <Portfolio theme={theme.portfolio} />
+        <Portfolio theme={theme.portfolio} visitors={visitors} />
         <ContactMe theme={theme.contactMe} />
       </div>
     );

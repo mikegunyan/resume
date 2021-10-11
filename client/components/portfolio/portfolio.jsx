@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TechModal from './techModal';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -36,10 +36,10 @@ const images = [
   },
 ];
 
-function Portfolio({ theme }) {
+function Portfolio({ theme, visitors }) {
   const style = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [tech, setTech] = React.useState('');
+  const [activeStep, setActiveStep] = useState(0);
+  const [tech, setTech] = useState('');
   const maxSteps = images.length;
 
   const handleNext = () => {
@@ -57,7 +57,7 @@ function Portfolio({ theme }) {
   return (
     <div className={theme}>
       <h1>Portfolio</h1>
-      <TechModal tech={tech} setTech={setTech} />
+      <TechModal tech={tech} setTech={setTech} visitors={visitors} />
       <Box sx={{ width: '100%', flexGrow: 1 }}>
         <Paper
           square

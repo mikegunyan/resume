@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 const mysql = require('mysql');
+const { lookup } = require('geoip-lite');
 
 const connection = {
   host: process.env.HOST || 'localhost',
@@ -83,25 +84,59 @@ app.get('/visitors', (req, res) => {
         console.log(err);
         res.sendStatus(500);
       } else {
-        db.query('SELECT COUNT(*) AS count FROM visitors', (err, results) => {
+        db.query('SELECT visitor FROM visitors', (err, results) => {
           if (err) {
             console.log(err);
             res.sendStatus(500);
           } else {
-            console.log(`--------------\n${date} ➡ Visitor: ${visitor}\n${date} ➡ Visitors: ${results[0].count}`)
-            res.send(results);
+            let newVisitors = [];
+            for (let i = 0; i < results.length; i++) {
+              let newIP = results[i].visitor.replace('::ffff:', '');
+              let newVisitor = lookup(newIP);
+              if (newVisitor) {
+                newVisitor.ip = newIP;
+              } else {
+                newVisitor = {
+                  country: '',
+                  region: '',
+                  timezone: '',
+                  city: '',
+                  ll: [ null, null ],
+                  ip: results[i].visitor.replace('::ffff:', '')
+                }
+              }
+              newVisitors.push(newVisitor);
+            }
+            res.send(newVisitors);
           }
         });
       }
     });
   } else {
-    db.query('SELECT COUNT(*) AS count FROM visitors', (err, results) => {
+    db.query('SELECT visitor FROM visitors', (err, results) => {
       if (err) {
         console.log(err);
         res.sendStatus(500);
       } else {
-        console.log(`--------------\n${date} ➡ Visitor: ${visitor}\n${date} ➡ Visitors: ${results[0].count}`)
-        res.send(results);
+        let newVisitors = [];
+        for (let i = 0; i < results.length; i++) {
+          let newIP = results[i].visitor.replace('::ffff:', '');
+          let newVisitor = lookup(newIP);
+          if (newVisitor) {
+            newVisitor.ip = newIP;
+          } else {
+            newVisitor = {
+              country: '',
+              region: '',
+              timezone: '',
+              city: '',
+              ll: [ null, null ],
+              ip: results[i].visitor.replace('::ffff:', '')
+            }
+          }
+          newVisitors.push(newVisitor);
+        }
+        res.send(newVisitors);
       }
     });
   }

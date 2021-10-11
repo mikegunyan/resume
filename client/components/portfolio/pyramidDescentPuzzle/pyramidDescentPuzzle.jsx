@@ -1,9 +1,9 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import Tree from './tree';
 import Solution from './solution';
 import utils from './utils';
 
-const PyramidDescentPuzzle = () => {
+const PyramidDescentPuzzle = ({ toggleMonitor }) => {
   const [inputArray, setInputArray] = useState([1,2,3]);
   const [sortedArray, setSortedArray] = useState([[1], [2, 3]]);
   const [targets, setTargets] = useState([2, 3]);
@@ -37,6 +37,9 @@ const PyramidDescentPuzzle = () => {
   };
 
   const buildArray = () => {
+    if (build === '7,2,1,4,9,5,7,4,6,8') {
+      toggleMonitor();
+    }
     const newArray = JSON.parse(`[${build}]`);
     const listData = utils.pyramid(newArray);
     setInputArray(newArray);

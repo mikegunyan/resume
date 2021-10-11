@@ -4,7 +4,6 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import TypeText from './typeText';
 import DarkMode from './darkMode';
-import { Link } from 'react-scroll'
 
 const Navigator = ({ documentHeight, navigatorClass, toggleDarkMode }) => {
   return (

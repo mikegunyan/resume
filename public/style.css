@@ -230,7 +230,7 @@ ul {
 }
 .techChanger {
   position: fixed;
-  top: 60px;
+  top: 0;
   right: 0;
 }
 /* Contact Me */
@@ -463,4 +463,17 @@ ul {
 .jumpButton:hover {
   transition: ease-in 0.5s;
   transform: scale(1.2);
+}
+/* CHECKERS */
+.siteMonitor {
+  margin: 0px 10px;
+  display: grid;
+  grid-template-columns: 14.25% 14.25% 14.25% 14.25% 14.25% 14.25% 14.25%;
+}
+.columnHeader {
+  background-color: black;
+  color: white;
+}
+.darkRow {
+  background-color: rgb(200, 200, 200);
 }
