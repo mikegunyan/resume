@@ -3,7 +3,7 @@
 echo "➡ Production Push started"
 
 echo "➡ Pushing to Github"
-git add . && git commit -m"Docker Push"
+git add . && git commit -m"$3 $4 $5 $6 $7 $8 $9"
 git push origin master
 
 echo "➡ Building Docker build image"
