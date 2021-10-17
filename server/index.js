@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT || 3004;
+const port = process.env.PORT || 3000;
 const mysql = require('mysql');
 const { lookup } = require('geoip-lite');
 
