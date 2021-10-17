@@ -7,4 +7,3 @@ Dockerfile2
 .git
 .gitignore
 .npmrc
-*.sh
