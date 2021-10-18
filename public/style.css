@@ -4,6 +4,10 @@ body {
   margin: 0px;
   padding: 0px;
 }
+h3 {
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
 button:focus, input:focus, select:focus {
   outline: none;
 }
@@ -194,6 +198,21 @@ ul {
   display: flex;
   align-items: center;
   justify-content: right;
+}
+.checkersBox {
+  display: flex;
+  height: 20px;
+  width: 35px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+.checkers {
+  height: 45px;
+  width: 45px;
+}
+.image {
+  margin-right: 5px;
 }
 /* Portfolio */
 .lightPortfolio {

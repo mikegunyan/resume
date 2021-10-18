@@ -11,7 +11,7 @@ const Checkers = () => {
         Checkers is a game of skill played with two players. Black always goes first. Pieces are moved one space diagonally either left or right on each turn. If there is a piece of the opposite color in this space and an open space in the space beyond it, the player must jump. A jump is made by moving the piece to the space beyond and removing the opponents piece from the board. If there is another jump that can be made, the player may jump or end the turn. If a piece is moved to the opponents side of the board, the piece is kinged and can now move forward and backward. The game is won when all of the opponents pieces are removed from the board.
       </p>
       <p>
-        The logic in the game was written in Javascript and uses CSS and React state to manage piece position ans style.
+        The logic in the game was written in Javascript and uses CSS and React state to manage piece position ans style. Feel free to check out the full application. <a href="http://tencentcheckers.com" target="_blank">tencentcheckers.com</a>
       </p>
     </div>
   );

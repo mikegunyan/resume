@@ -4,12 +4,27 @@ const Experience = ({ theme }) => {
   return (
     <div className={theme}>
       <h1>Experience</h1>
-      <h2>Applications</h2>
+      <h2>Applications and Websites</h2>
+      <div>
+        <h3>TenCentCheckers</h3>
+        <div className="appDescription">An interactive game application.</div>
+        <div className="contactBox">
+          <div className="checkersBox">
+            <img className="checkers image" src={`https://tencentcheckers.s3.us-west-2.amazonaws.com/kingRedPiece.png`} />
+          </div>
+          <a href="http://tencentcheckers.com" target="_blank">tencentcheckers.com</a>
+        </div>
+        <ul>
+          <li>Designed all the logic involved with the rules of the game.</li>
+          <li>Created a welcome modal to start a new or saved game.</li>
+          <li>Utilized WebSockets to make multiplayer.</li>
+        </ul>
+      </div>
       <div>
         <h3>Croxy</h3>
         <div className="appDescription">An item viewing and shopping application.</div>
         <div className="contactBox">
-          <img src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/light/github.png`} />
+          <img className="image" src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/light/github.png`} />
           <a href="https://github.com/Chill-Crocs/image-service" target="_blank">github.com/Chill-Crocs/image-service</a>
         </div>
         <ul>
@@ -24,26 +39,13 @@ const Experience = ({ theme }) => {
         <h3>Understock</h3>
         <div className="appDescription">An item viewing and shopping application.</div>
         <div className="contactBox">
-          <img src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/light/github.png`} />
+          <img className="image" src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/light/github.png`} />
           <a href="https://github.com/J-EQUAL-MC-SQUARED/reviews" target="_blank">github.com/J-EQUAL-MC-SQUARED/reviews</a>
         </div>
         <ul>
           <li>Legacy code micro-service including reviews section with images.</li>
           <li>Refactored database and scaled to production level traffic.</li>
           <li>Deployed to AWS EC2.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Checkers</h3>
-        <div className="appDescription">An interactive game application.</div>
-        <div className="contactBox">
-          <img src={`https://michaelgunyanresume.s3.us-west-2.amazonaws.com/images/light/github.png`} />
-          <a href="https://github.com/mikegunyan/checkers" target="_blank">github.com/mikegunyan/checkers</a>
-        </div>
-        <ul>
-          <li>Designed all the logic involved with the rules of the game.</li>
-          <li>Created a welcome modal to start a new or saved game.</li>
-          <li>Utilized MongoDB to save and access games.</li>
         </ul>
       </div>
       <div>

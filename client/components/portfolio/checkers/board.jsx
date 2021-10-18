@@ -34,11 +34,13 @@ const Board = () => {
 
   const skipJump = () => {
     if (turn === 'red') {
-      resetRedJump();
-      checkAutoJumpBlack();
+      this.setState({ autoJumpRed: false});
+      this.resetRedJump();
+      this.checkAutoJumpBlack();
     } else {
-      resetBlackJump();
-      checkAutoJumpRed();
+      this.setState({ autoJumpBlack: false});
+      this.resetBlackJump();
+      this.checkAutoJumpRed();
     }
     setTurn(turn === 'red' ? 'black' : 'red')
   }
